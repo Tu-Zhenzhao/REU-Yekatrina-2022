@@ -1,0 +1,38 @@
+For set 2 question
+
+Q1: Show that the condition number κ(A) of the invertible matrix A satisfies κ(A) ≥ 1.
+
+D1: By inequilty thum ||A * A^{-1}|| <= ||A|| * ||A^{-1}|| and we can clearly know that A*A^{-1} = I, so the norm of I will be 1. Therefore, 1 <= <= ||A|| * ||A^{-1}||
+
+Q2: Give examples of a) strictly diagonally dominant matrices by rows; b) symmetric positive definite marices. Justify your examples.
+
+D2: For a) Ex of strictly diagonally dominanat:
+	105   5     2     2     3
+	5   104     3     4     1
+	5     4   105     4     4
+	4     2     1   101     1
+	2     4     4     1   101 
+
+For b) The defination of symmetric positive definite marices is that it has to be symmetric and eigenvalues are positive. That means x^T * A x has to be larger than 0. 
+Ex: 
+	2  -1  0
+	-1  2  -1
+	0  -1   2
+We will justify by two matlab functions:   -------
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
