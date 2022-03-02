@@ -23,7 +23,7 @@ xold=x_0;
 x=x_0;
 
 %SOR iterations:
-while errors>tol & iter<Nmax
+while errors>tol && iter<Nmax
     iter=iter+1;
     for ii=1:n
         p=0;

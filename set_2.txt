@@ -19,10 +19,13 @@ Ex:
 	-1  2  -1
 	0  -1   2
 We will justify by two matlab functions:   -------
+1. Positive_definite([2,-1,0;-1,2,-1;0,-1,2]) this code can test Positive_definite.
+2. IsDiagDom( [ 105 5 2; 5 104 3; 5 4 105] ) is for testing strictly diagonally dominant.
 
+Q3:Show that if matrix A, n × n is strictly diagonally dominanat by rows, then Jacobi and Gauss-Seidel methods converge for the solution of Au = f for any intial guess u0.
 
-
- 
+D3:for testing this strictly diagonally dominant, we can jsut use sor code by set omega to 1.
+ sor([ 105 5 2; 5 104 3; 5 4 105],[1;2;3],[0;0;0], 5, 1, 1) 
 
 
 
