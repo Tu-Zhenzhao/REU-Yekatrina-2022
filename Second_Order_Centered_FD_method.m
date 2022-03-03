@@ -1,7 +1,7 @@
 %n is the space of [0,1]
 %then, n+1 will be nodes in [0,1]
 %n-1 are the nodes that in two boundary conditions
-function [u] = Second_Order_Centered_FD_method(n)
+function [max_error] = Second_Order_Centered_FD_method(n)
 x=linspace(0,1,n+1);
 h = 1 / (n+1); %h is the mesh width
 %create a sparse matrix A 
