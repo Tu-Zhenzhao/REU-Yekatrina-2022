@@ -24,11 +24,12 @@ We will justify by two matlab functions:   -------
 
 Q3:Show that if matrix A, n × n is strictly diagonally dominanat by rows, then Jacobi and Gauss-Seidel methods converge for the solution of Au = f for any intial guess u0.
 
-D3:for testing this strictly diagonally dominant, we can jsut use sor code by set omega to 1.
- sor([ 105 5 2; 5 104 3; 5 4 105],[1;2;3],[0;0;0], 5, 1, 1) 
+D3: Since A is strictly diagonally dominant by rows, |aii| > nj=1 sum of |aij| for j != i and i = 1,...,n. As a consequence, so norm of ||B_j|| < 1, so that the Jacobi method is convergent. (I have a litte problem on proof of Guess-Seidel method, I will finish it on final project)
 
+Q4: Implement Jacobi; SOR and (optional: “underrelaxed Jacobi” with ω = 2/ 3) to solve linear system Au = f. Test your methods. Did the methods converge for any matrix A?
 
-
+D4: Try to use 'Jacobi([ 105 5 2; 5 104 3; 5 4 105],[1;2;3],1e-13, 5, [0;0;0])' to test Jacobi method
+Also use sor([ 105 5 2; 5 104 3; 5 4 105],[1;2;3],[0;0;0], 10, 1e-13, 1) to test Jaobi anwser. omega = 1, so this method is Guess-Seidel method.
 
 
 
