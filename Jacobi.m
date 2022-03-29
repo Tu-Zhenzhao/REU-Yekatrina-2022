@@ -27,6 +27,9 @@ end
 res = b-A*x_0;
 errors = norm(res);
 dx = zeros(na,1);
+
+count = 0; %counting when it stop
+
 for k=1:maxit
 
     for i=1:na
@@ -35,8 +38,16 @@ for k=1:maxit
             dx(i) = dx(i) - A(i,j)*x_0(j); 
         end
         dx(i) = dx(i)/A(i,i);
-        x_0(i) = x_0(i) + dx(i);
 
+        x_0(i) = x_0(i) + dx(i);
+        disp(x_0);
+        count = count + 1;
+        
+    if (dx == x_0)
+        fprintf('The real iterations is %g \n', count);
+        break
+    end
+        
     end
     if(errors<epsilon)
         break
