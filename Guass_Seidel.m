@@ -1,5 +1,3 @@
-clc
-clear
 A=input('Enter the coefficient matrix A: \n');
 %A= [7 -3 1; 2 9 -3; 5 4 11] 
 % Write the coefficient matrix, A. where  the system: AX=B.
@@ -19,7 +17,8 @@ for m = 1:row % checking strictly diagonally dominant matrix
            return
         end
 end
- merr=max(Err);
+merr=max(Err);
+count = 0;
 while merr>epsilon % Finding the final result.
     for m=1:1:row
        C(m,1)=X(m,1);
@@ -28,8 +27,9 @@ while merr>epsilon % Finding the final result.
        C(m,1)=X(m,1);
     end 
     merr=max(Err);
+    count = count +1;
 end
 disp(' The required solution is:');
 disp(X);
+fprintf('After %g iteration: \n', count);
 %fprintf('%1.5f \n', X(:,1)); 
-
