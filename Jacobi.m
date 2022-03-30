@@ -13,11 +13,11 @@
 %-------------------------------------------------------
 function x = Jacobi(~, ~, ~, ~, ~)
 
-A = [7 -3 1; 2 9 -3; 5 4 11] ;
-b = [21; 37; 15];
-epsilon = 0.001;
-maxit = 10;
-x = [0;0;0];
+A = [11, 3; 3, 12] ;
+b = [5;5];
+epsilon = 0.0000001;
+maxit = 30;
+x = [0;0];
 
 
 % check if the entered matrix is a square matrix
@@ -33,7 +33,7 @@ if nb ~= na || mb~=1
    return
 end
 
-
+ls = [];
 dx = zeros(na,1);
 for k=1:maxit
     sum = 0;
@@ -48,10 +48,16 @@ for k=1:maxit
             sum = sum + dx(i);
         else 
             sum = sum - dx(i);
+        
+        ls = [ls sum];
         end
     end
+    disp(x)
+    disp(sum)
     if(sum <= epsilon)
         break
     end
 end
+plot(k, list);
+hold on
 fprintf('The final answer obtained after %g iterations is  \n', k);

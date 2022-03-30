@@ -11,7 +11,7 @@ Err=ones(row,1); % Error column matrix.
 epsilon=input('\n Enter the tolerance of error ');
   %error of tolerance you want. for exmple 0.001 or 0.0001 etc.
 for m = 1:row % checking strictly diagonally dominant matrix
-        if 2*abs(A(m,m))<= sum(abs(A(m,:))) 
+        if 2*abs(A(m,m)) < sum(abs(A(m,:))) 
             disp('Rearrange the equations to make strictly diagonally dominant matrix!!!');
             %Gauss Seidel method can't be applied.
            return
@@ -27,6 +27,8 @@ while merr>epsilon % Finding the final result.
        C(m,1)=X(m,1);
     end 
     merr=max(Err);
+    disp(X)
+    disp(Err)
     count = count +1;
 end
 disp(' The required solution is:');
