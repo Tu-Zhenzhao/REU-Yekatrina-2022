@@ -11,14 +11,7 @@
 % ON RETURN :
 %   x        approximate solution to A*x = b.
 %-------------------------------------------------------
-function x = Jacobi(~, ~, ~, ~, ~)
-
-A = [11, 3; 3, 12] ;
-b = [5;5];
-epsilon = 0.0000001;
-maxit = 30;
-x = [0;0];
-
+function k = Jacobi(A, b, epsilon, maxit, x)
 
 % check if the entered matrix is a square matrix
 [na, ma] = size(A);
@@ -33,7 +26,6 @@ if nb ~= na || mb~=1
    return
 end
 
-ls = [];
 dx = zeros(na,1);
 for k=1:maxit
     sum = 0;
@@ -48,16 +40,10 @@ for k=1:maxit
             sum = sum + dx(i);
         else 
             sum = sum - dx(i);
-        
-        ls = [ls sum];
         end
     end
-    disp(x)
-    disp(sum)
     if(sum <= epsilon)
         break
     end
 end
-plot(k, list);
-hold on
-fprintf('The final answer obtained after %g iterations is  \n', k);
+%fprintf('The final answer obtained after %g iterations is  \n', k);
