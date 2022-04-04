@@ -1,5 +1,5 @@
 
-function X = Gauss_Seidel(A, b, epsilon, X)
+function count = Gauss_Seidel(A, b, epsilon, x)
 
 
 
@@ -26,15 +26,15 @@ merr=max(Err);
 count = 0;
 while merr>epsilon % Finding the final result.
     for m=1:1:row
-       C(m,1)=X(m,1);
-       X(m,1)=(1/P(m,m))*(P(m,col)-sum(A(m,:)*X(:,1))+A(m,m)*X(m,1));
-       Err(m,1)= abs(C(m,1)-X(m,1));
-       C(m,1)=X(m,1);
+       C(m,1)=x(m,1);
+       x(m,1)=(1/P(m,m))*(P(m,col)-sum(A(m,:)*x(:,1))+A(m,m)*x(m,1));
+       Err(m,1)= abs(C(m,1)-x(m,1));
+       C(m,1)=x(m,1);
     end 
     merr=max(Err);
     count = count +1;
 end
-disp(' The required solution is:');
-disp(X);
-fprintf('After %g iteration: \n', count);
+% disp(' The required solution is:');
+% disp(x);
+% fprintf('After %g iteration: \n', count);
 %fprintf('%1.5f \n', X(:,1)); 
